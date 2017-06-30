@@ -43,3 +43,10 @@
 	justify-content: center;
 	text-align: center;  /*Horizontally center contents within div*/
 }
+
+.fabutton {
+	background: none;
+	padding: 0;
+	border: none;
+	outline: none;
+}

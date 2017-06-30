@@ -12,6 +12,7 @@
 	overflow: auto;
 }*/
 
+/*One way to fix div in the center of window*/
 /*.window-center-1 {
 	position: fixed;
 	top: 50%;
@@ -36,10 +37,9 @@
 	height: 100px;
 	margin: auto;    /* Up to this line to fix the div in the center of window */
 	background-color: cyan;
-	/* Following three lines: Vertically center contents within div */
-	display: flex;  
+	/* Following three lines: Vertically center contents within div using flex box*/
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-bottom: 10px;
-	text-align: center; /* Horizontally center contents within div */
+	text-align: center;  /*Horizontally center contents within div*/
 }

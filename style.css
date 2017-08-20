@@ -26,22 +26,23 @@
 	background: cyan;
 }*/
 
+
 .window-center-2 {
-	/*display: inline-block;*/
-	position: fixed;
+	position: fixed;  /* Fix the div in the center of window START */
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	margin: auto;  /* Fix the div in the center of window END */
 	width: 300px;
 	height: 100px;
-	margin: auto;    /* Up to this line to fix the div in the center of window */
 	background-color: cyan;
 	/* Following three lines: Vertically center contents within div using flex box*/
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;  /*Horizontally center contents within div*/
+	border-radius: 45px;
 }
 
 .fabutton {

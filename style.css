@@ -36,13 +36,17 @@
 	margin: auto;  /* Fix the div in the center of window END */
 	width: 300px;
 	height: 100px;
-	background-color: cyan;
+	background-color: mediumaquamarine;
 	/* Following three lines: Vertically center contents within div using flex box*/
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;  /*Horizontally center contents within div*/
 	border-radius: 45px;
+}
+
+#text-input {
+	border-radius: 5px;
 }
 
 .fabutton {

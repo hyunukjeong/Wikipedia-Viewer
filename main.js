@@ -50,17 +50,29 @@ $("document").ready(function() {
 		$.ajax({
 			type: 'GET',
 			dataType: 'json',
-			// url: 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+searchTerm+'&srlimit=3&srprop=snippet&srinfo=Null&format=json&origin=*',
-			url: 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids=170570|3066589|38569806&exsentences=2&exintro=True&exlimit=5&format=json&origin=*',
+			url: 'https://en.wikipedia.org/w/api.php',
+			data: { 'action': 'query',
+					prop: 'extracts',
+					// pageids: '170570|3066589|38569806',
+					generator: 'search',
+					gsrsearch: 'macalester',
+					exsentences: 2,
+					exintro: true,
+					format: 'json',
+					origin: '*'},
+			
 			success: function(data) {
 				alert("success");
-				var searches = data;
+				var result = data.query.pages;
+				var resultArr = Object.values(result);
 				var tempStr = "";
-				// searches.forEach(function(item) {
-				// 	tempStr += item.title + "<br>" + item.snippet + "<br>";
-				// });
-				// $jsonChecker.html(tempStr);
-				$jsonChecker.html(JSON.stringify(searches));
+				resultArr.forEach(function(item) {
+					tempStr += "<b>" + item.title + "</b><br>" + stripHTML(item.extract) + "<br>";
+					tempStr += "<a href='https://en.wikipedia.org/?curid=" + item.pageid + "'' target='_blank'>Link</a><br><br>";
+				});
+				$jsonChecker[0].innerHTML = tempStr; //jQuery always returns a HTMLCollection!!!
+				// $jsonChecker.html(tempStr);  // This is an alternative using jQuery method
+				// $jsonChecker.html(JSON.stringify(Object.values(result)));  //JSON check
 
 			},
 			error: function(jqXHR, status, err) {
@@ -68,6 +80,13 @@ $("document").ready(function() {
 				$jsonChecker.html(JSON.stringify(jqXHR) + "\n\n\n" + status + "\n\n\n" + err);
 			}
 		});
+	}
+
+	// Strip HTML tags
+	function stripHTML(html) {
+		var tmp = document.createElement("div");
+		tmp.innerHTML = html;
+		return tmp.textContent;
 	}
 
 

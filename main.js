@@ -55,7 +55,7 @@ $("document").ready(function() {
 					prop: 'extracts',
 					// pageids: '170570|3066589|38569806',
 					generator: 'search',
-					gsrsearch: 'macalester',
+					gsrsearch: searchTerm,
 					exsentences: 2,
 					exintro: true,
 					format: 'json',

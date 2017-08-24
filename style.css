@@ -33,7 +33,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto;  /* Fix the div in the center of window END */
+	margin: auto;   /* Fix the div in the center of window END  */
 	width: 300px;
 	height: 100px;
 	/*background-color: mediumaquamarine;*/
@@ -46,7 +46,7 @@
 	border-radius: 45px;
 }
 
-a {
+#random-article {
 	font: 1.3em helvetica;
 	color: red;
 }
@@ -69,11 +69,27 @@ a {
 	border: none;
 	outline: none;
 }
+.a-links {
+	display: block;
+	max-width: 800px;
+	margin: 0 auto;
+	background: white;
+	padding: 10px;
+	border: 1px solid red;
+	border-radius: 10px;
+	
 
-input[type=text]:focus {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-/*  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;*/
-  border: 1px solid rgba(81, 203, 238, 1);
-  border-radius: 5px;
+}
+
+/* Legacy: when <div> was wrapped inside <a>. <div> no longer needed since <a>'s display: block. */
+/*.page-links {
+	max-width: 800px;
+	margin: 0 auto;
+	background: white;
+	border: 1px solid red;
+	padding: 10px;
+}*/
+
+#json-checker {
+	margin: 50px auto;
 }

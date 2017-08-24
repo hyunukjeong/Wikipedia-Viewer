@@ -16,7 +16,7 @@ $("document").ready(function() {
 			.fadeOut(700);
 		// query(text.value);
 		query2(text.value);
-		text.value = "";  // empty the text field
+		//text.value = "";  // empty the text field
 		return false;  // same as event.preventDefault(); NOTE: page reloads when a form is submitted.
 
 	});
@@ -56,19 +56,21 @@ $("document").ready(function() {
 					// pageids: '170570|3066589|38569806',
 					generator: 'search',
 					gsrsearch: searchTerm,
-					exsentences: 2,
+					exsentences: 1,
 					exintro: true,
 					format: 'json',
 					origin: '*'},
 			
 			success: function(data) {
-				alert("success");
+				console.log("success");
 				var result = data.query.pages;
 				var resultArr = Object.values(result);
 				var tempStr = "";
 				resultArr.forEach(function(item) {
-					tempStr += "<b>" + item.title + "</b><br>" + stripHTML(item.extract) + "<br>";
-					tempStr += "<a href='https://en.wikipedia.org/?curid=" + item.pageid + "'' target='_blank'>Link</a><br><br>";
+					// tempStr += "<div class='page-links'><a href='https://en.wikipedia.org/?curid=" + item.pageid + "'' target='_blank'>"
+					// 		+ "<b>" + item.title + "</b><br>" + stripHTML(item.extract) + "</a></div><br>"
+					tempStr += "<a class='a-links' href='https://en.wikipedia.org/?curid=" + item.pageid + "'' target='_blank'>"
+							+ "<b>" + item.title + "</b><br>" + stripHTML(item.extract) + "</a><br>"
 				});
 				$jsonChecker[0].innerHTML = tempStr; //jQuery always returns a HTMLCollection!!!
 				// $jsonChecker.html(tempStr);  // This is an alternative using jQuery method

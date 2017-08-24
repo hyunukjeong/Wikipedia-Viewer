@@ -27,7 +27,7 @@
 }*/
 
 
-.window-center-2 {
+.random-search-wrapper {
 	position: absolute;  /* Fix the div in the center of window START */
 	top: 0;
 	bottom: 0;
@@ -54,6 +54,7 @@
 #text-input {
 	border-radius: 5px;
 	border: 1.3px solid red;
+	padding-left: 5px;
 }
 
 #text-input:focus {
@@ -69,6 +70,7 @@
 	border: none;
 	outline: none;
 }
+
 .a-links {
 	display: block;
 	max-width: 800px;
@@ -86,15 +88,9 @@
 	border-left: 3px solid red;
 }
 
-/* Legacy: when <div> was wrapped inside <a>. <div> no longer needed since <a>'s display: block. */
-/*.page-links {
-	max-width: 800px;
-	margin: 0 auto;
-	background: white;
-	border: 1px solid red;
-	padding: 10px;
-}*/
 
 #json-checker {
-	margin: 50px auto;
+	margin: 100px auto;
+
+
 }

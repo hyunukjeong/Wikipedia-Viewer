@@ -28,7 +28,7 @@
 
 
 .window-center-2 {
-	position: fixed;  /* Fix the div in the center of window START */
+	position: absolute;  /* Fix the div in the center of window START */
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -74,11 +74,16 @@
 	max-width: 800px;
 	margin: 0 auto;
 	background: white;
-	padding: 10px;
-	border: 1px solid red;
+	padding: 15px;
+	border: 1px solid blue;
 	border-radius: 10px;
-	
+	color: black;
+}
 
+.a-links:hover {
+	text-decoration: none;
+	color: black;
+	border-left: 3px solid red;
 }
 
 /* Legacy: when <div> was wrapped inside <a>. <div> no longer needed since <a>'s display: block. */
